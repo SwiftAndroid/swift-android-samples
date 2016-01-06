@@ -1,0 +1,28 @@
+buildscript {
+    repositories {
+	mavenLocal()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.5.0'
+        classpath 'net.zhuoweizhang:swiftandroid:1.0.0'
+    }
+}
+apply plugin: 'android'
+apply plugin: 'net.zhuoweizhang.swiftandroid'
+
+android {
+    compileSdkVersion 'android-23'
+    buildToolsVersion '23.0.2'
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 23
+    }
+
+    buildTypes {
+        release {
+            proguardFile getDefaultProguardFile('proguard-android.txt')
+        }
+    }
+}
